@@ -1,0 +1,22 @@
+{
+  "name": "node-mongo-test",
+  "version": "1.0.0",
+  "description": "Test node mongo",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha test/* --exit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "expect": "^23.3.0",
+    "express": "^4.16.3",
+    "mocha": "^5.2.0",
+    "mongoose": "^5.2.1",
+    "supertest": "^3.1.0"
+  }
+}
