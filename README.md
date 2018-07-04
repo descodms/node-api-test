@@ -1,4 +1,4 @@
-# Backend Node Mong Test (Semi Senior)
+# Backend Node Mongo Test (Semi Senior)
 
 Build a CRUD API for one entity (Note). Use NodeJS, Express (with routes), mongoose (MongoDB).
 
