@@ -15,11 +15,10 @@ exports.updateById = async (id, updatedData) => {
 
 exports.remove = async id => {
   const note = await Note.findByIdAndRemove({ _id: id });
-  if (note) {
-    return true;
-  } else {
-    return false;
+  if (!note) {
+    throw new Error('error');
   }
+  return true;
 };
 
 exports.get = async data => {
@@ -31,5 +30,3 @@ exports.getById = async id => {
   const note = await Note.findById(id);
   return note;
 };
-
-// module.exports = noteService;

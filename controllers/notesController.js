@@ -12,11 +12,7 @@ exports.updateById = async (req, res) => {
 
 exports.remove = async (req, res) => {
   const note = await NoteServices.remove(req.params.id);
-  if (note) {
-    res.send(true);
-  } else {
-    res.send(false);
-  }
+  res.send(!!note);
 };
 
 exports.get = async (req, res) => {
