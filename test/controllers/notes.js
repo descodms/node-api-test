@@ -8,8 +8,10 @@ describe('controllers notes', () => {
   afterEach(() => {
     return Note.remove({});
   });
+
+  //anda
   it('should add a Note', async () => {
-    const data = {title: 'test', content: 'test content'};
+    const data = { title: 'test', content: 'test content' };
     const response = await request(server)
       .post('/notes')
       .send(data) // sends a JSON post body
@@ -21,8 +23,9 @@ describe('controllers notes', () => {
     expect(note.content).toBe(data.content);
   });
 
+  //anda
   it('should remove a Note', async () => {
-    const data = {title: 'test', content: 'test content'};
+    const data = { title: 'test', content: 'test content' };
     const document = await Note.create(data);
     const response = await request(server)
       .delete('/notes/' + document._id.toString())
@@ -34,10 +37,11 @@ describe('controllers notes', () => {
     expect(result).toBe(true);
   });
 
+  //anda
   it('should return Notes', async () => {
     const data = [
-      {title: 'test', content: 'test content'},
-      {title: 'test2', content: 'test content2'},
+      { title: 'test', content: 'test content' },
+      { title: 'test2', content: 'test content2' },
     ];
     await Note.create(data);
     const response = await request(server)
@@ -51,10 +55,11 @@ describe('controllers notes', () => {
     expect(note.length).toBe(2);
   });
 
+  //anda
   it('should return Notes by id', async () => {
     const data = [
-      {title: 'test', content: 'test content'},
-      {title: 'test2', content: 'test content2'},
+      { title: 'test', content: 'test content' },
+      { title: 'test2', content: 'test content2' },
     ];
     const document = await Note.create(data);
     const response = await request(server)
@@ -70,13 +75,14 @@ describe('controllers notes', () => {
     expect(note.content).toBe(data[0].content);
   });
 
+  //anda
   it('should updateById a Note', async () => {
     const data = [
-      {title: 'test', content: 'test content'},
-      {title: 'test2', content: 'test content2'},
+      { title: 'test', content: 'test content' },
+      { title: 'test2', content: 'test content2' },
     ];
     const document = await Note.create(data);
-    const updatedData = {title: 'test updated', content: 'test content'};
+    const updatedData = { title: 'test updated', content: 'test content' };
     const response = await request(server)
       .put('/notes/' + document[0]._id.toString())
       .send(updatedData) // sends a JSON post body
@@ -91,11 +97,11 @@ describe('controllers notes', () => {
 
   it('should updateById partially a Note', async () => {
     const data = [
-      {title: 'test', content: 'test content'},
-      {title: 'test2', content: 'test content2'},
+      { title: 'test', content: 'test content' },
+      { title: 'test2', content: 'test content2' },
     ];
     const document = await Note.create(data);
-    const updatedData = {title: 'test updated'};
+    const updatedData = { title: 'test updated' };
     const response = await request(server)
       .patch('/notes/' + document[0]._id.toString())
       .send(updatedData) // sends a JSON post body
