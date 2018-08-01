@@ -9,7 +9,6 @@ describe('controllers notes', () => {
     return Note.remove({});
   });
 
-  //anda
   it('should add a Note', async () => {
     const data = { title: 'test', content: 'test content' };
     const response = await request(server)
@@ -23,7 +22,6 @@ describe('controllers notes', () => {
     expect(note.content).toBe(data.content);
   });
 
-  //anda
   it('should remove a Note', async () => {
     const data = { title: 'test', content: 'test content' };
     const document = await Note.create(data);
@@ -37,7 +35,6 @@ describe('controllers notes', () => {
     expect(result).toBe(true);
   });
 
-  //anda
   it('should return Notes', async () => {
     const data = [
       { title: 'test', content: 'test content' },
@@ -55,7 +52,6 @@ describe('controllers notes', () => {
     expect(note.length).toBe(2);
   });
 
-  //anda
   it('should return Notes by id', async () => {
     const data = [
       { title: 'test', content: 'test content' },
@@ -75,7 +71,6 @@ describe('controllers notes', () => {
     expect(note.content).toBe(data[0].content);
   });
 
-  //anda
   it('should updateById a Note', async () => {
     const data = [
       { title: 'test', content: 'test content' },

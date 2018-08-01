@@ -5,11 +5,11 @@ const mongodbErrorHandler = require('mongoose-mongodb-errors');
 const noteSchema = new mongoose.Schema({
   title: {
     type: String,
-    require: 'Please enter a title',
+    required: 'Please enter a title',
   },
   content: {
     type: String,
-    require: 'Please enter a content',
+    required: 'Please enter a content',
   },
 });
 

@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-//import model
+//import model before routes
 require('./models/note');
 //import routes
 const routes = require('./routes/index');
@@ -10,7 +10,7 @@ require('dotenv').config({ path: 'variables.env' });
 
 // Connect to our Database and handle bad connections
 mongoose.connect(process.env.MONGO_URI);
-mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
+mongoose.Promise = global.Promise;
 mongoose.connection.on('error', err => {
   console.error(`🚫 → ${err.message}`);
 });
@@ -31,4 +31,5 @@ const server = app.listen(app.get('port'), () => {
   console.log(`Express running → PORT ${server.address().port}`);
 });
 
+//export app
 module.exports = app;

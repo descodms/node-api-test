@@ -8,7 +8,7 @@ exports.create = async data => {
 
 exports.updateById = async (id, updatedData) => {
   const note = await Note.findByIdAndUpdate({ _id: id }, updatedData, {
-    new: true, //return the new note instead of the old one
+    new: true,
   });
   return note;
 };
